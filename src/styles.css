@@ -9,6 +9,7 @@
     --color-success: rgb(255, 157, 0);
     --blanco: rgb(255, 255, 255);
     --color-verde: rgb(37, 95, 56);
+    --color-azul: rgb(24, 59, 78);
 }
 
 body {
@@ -27,6 +28,7 @@ body {
     width: 100%;
     max-width: 1000px;
     overflow-x: auto;
+    margin-top: 3rem;
 }
 
 .tabla-responsive {
@@ -58,15 +60,6 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.success {
-    color: var(--color-success);
-    font-weight: 600;
-}
-
-.danger {
-    color: var(--color-danger);
-    font-weight: 600;
-}
 
 .paginacion {
     display: flex;
@@ -139,6 +132,18 @@ body {
     background-color: var(--color-success);
 }
 
+.boton-primario {
+    background-color: var(--color-primario);
+}
+
+.boton-fondo {
+    background-color: var(--color-fondo);
+}
+
+.boton-azul{
+    background-color: var(--color-azul);
+}
+
 .boton-circular:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
@@ -161,6 +166,7 @@ body {
     justify-content: center;
     gap: 1.5rem;
     padding: 2rem;
+    margin-top: 3rem;
     width: 100%;
     box-sizing: border-box;
 }
@@ -214,27 +220,32 @@ body {
         /* 2 columnas en pantallas medianas */
     }
 }
+
 @media (max-width: 600px) {
     .cards-container {
         grid-template-columns: 1fr;
         /* 1 columna en móviles */
     }
 }
+
 @media (max-width: 480px) {
     .paginacion {
         flex-direction: column;
         gap: 0.75rem;
     }
+
     .paginacion button {
         width: 100%;
         max-width: 220px;
     }
+
     .paginacion span {
         width: 100%;
         max-width: 220px;
         text-align: center;
     }
 }
+
 @media (max-width: 768px) {
 
     .tabla-responsive th,
@@ -243,6 +254,7 @@ body {
         font-size: 0.9rem;
     }
 }
+
 @media (max-width: 480px) {
     .tabla-responsive {
         font-size: 0.85rem;

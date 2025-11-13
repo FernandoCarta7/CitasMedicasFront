@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { PacienteListar } from './paciente-listar/paciente-listar';
 import { CitaListar } from './cita-listar/cita-listar';
+import { MedicoListar } from './medico-listar/medico-listar';
 
 export const routes: Routes = [
     /*
@@ -11,7 +12,7 @@ export const routes: Routes = [
     /*
     -----------------------------------------MEDICOS-----------------------------------------
     */
-    { path: 'medico-listar', component: PacienteListar, title: 'Medicos' },
+    { path: 'medico-listar', component: MedicoListar, title: 'Medicos' },
     /*
     ------------------------------------------CITAS------------------------------------------
     */
