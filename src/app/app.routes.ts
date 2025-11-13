@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { PacienteListar } from './paciente-listar/paciente-listar';
+import { CitaListar } from './cita-listar/cita-listar';
 
 export const routes: Routes = [
     /*
@@ -10,10 +11,10 @@ export const routes: Routes = [
     /*
     -----------------------------------------MEDICOS-----------------------------------------
     */
-    { path: 'medico-listar', component: PacienteListar, title: 'Pacientes' },
+    { path: 'medico-listar', component: PacienteListar, title: 'Medicos' },
     /*
     ------------------------------------------CITAS------------------------------------------
     */
-    { path: 'cita-listar', component: PacienteListar, title: 'Pacientes' },
+    { path: 'cita-listar', component: CitaListar, title: 'Citas' },
     { path: '', redirectTo: 'paciente-listar', pathMatch: 'full' }
 ];

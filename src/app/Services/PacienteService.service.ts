@@ -22,14 +22,14 @@ export class PacienteService {
         let lista = this.http.get<Paciente[]>(this.url);
         return lista;
     }
-    addPaciente(Paciente: Paciente): Observable<Object> {
-        return this.http.post(this.url, Paciente);
+    addPaciente(paciente: Paciente): Observable<Object> {
+        return this.http.post(this.url, paciente);
     }
-    editPaciente(cedula: String, Paciente: Paciente): Observable<Object> {
-        return this.http.put(`${this.url}/${cedula}`, Paciente);
+    editPaciente(id: number, paciente: Paciente): Observable<Object> {
+        return this.http.put(`${this.url}/${id}`, paciente);
     }
-    deletePaciente(cedula: String): Observable<Object> {
-        return this.http.delete(`${this.url}/${cedula}`);
+    deletePaciente(id: number): Observable<Object> {
+        return this.http.delete(`${this.url}/${id}`);
     }
 
     getPacientesPage(page: number, size: number): Observable<any> {

@@ -1,0 +1,41 @@
+import { HttpClient, HttpParams } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { Medico } from "../Models/Medico";
+import { Observable } from "rxjs";
+
+
+@Injectable({
+    providedIn: 'root'
+})
+export class MedicoService {
+
+    private url = "http://localhost:8080/app/medico";
+    //private apiUrl = "";
+
+    constructor(private http: HttpClient) {
+
+    }
+    /*getMedico(id: String) {
+        return this.http.get<Medico>(`${this.url}/${id}`)
+    }*/
+    getMedicos(): Observable<Medico[]> {
+        let lista = this.http.get<Medico[]>(this.url);
+        return lista;
+    }
+    addMedico(medico: Medico): Observable<Object> {
+        return this.http.post(this.url, medico);
+    }
+    editMedico(id: number, medico: Medico): Observable<Object> {
+        return this.http.put(`${this.url}/${id}`, medico);
+    }
+    deleteMedico(id: number): Observable<Object> {
+        return this.http.delete(`${this.url}/${id}`);
+    }
+
+    getMedicosPage(page: number, size: number): Observable<any> {
+        let params = new HttpParams()
+            .set('page', page)
+            .set('size', size);
+        return this.http.get<any>(this.url, { params });
+    }
+}
