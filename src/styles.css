@@ -10,6 +10,7 @@
     --blanco: rgb(255, 255, 255);
     --color-verde: rgb(37, 95, 56);
     --color-azul: rgb(24, 59, 78);
+    --color-dorado: rgb(255, 155, 69);
 }
 
 body {
@@ -32,6 +33,8 @@ body {
 }
 
 .tabla-responsive {
+
+    position: relative;
     width: 100%;
     border-collapse: collapse;
     background-color: var(--color-secundario);
@@ -67,12 +70,9 @@ body {
     align-items: center;
     gap: 1rem;
     margin-top: 1.5rem;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        "Helvetica Neue", Arial, sans-serif;
     color: var(--color-texto);
 }
 
-/* 🟢 Botones */
 .paginacion button {
     background-color: var(--color-primario);
     color: var(--blanco);
@@ -120,6 +120,35 @@ body {
     transition: all 0.3s ease;
 }
 
+.boton {
+    color: var(--color-dorado);
+    border: none;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 10%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.boton-reporte {
+    color: var(--blanco);
+    border: none;
+    width: 6rem;
+    height: 3rem;
+    border-radius: 10%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
 .boton-rojo {
     background-color: var(--color-danger);
 }
@@ -140,7 +169,7 @@ body {
     background-color: var(--color-fondo);
 }
 
-.boton-azul{
+.boton-azul {
     background-color: var(--color-azul);
 }
 

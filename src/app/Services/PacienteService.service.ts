@@ -10,6 +10,7 @@ import { Observable } from "rxjs";
 export class PacienteService {
 
     private url = "http://localhost:8080/app/paciente";
+    private urlDelete = "http://localhost:8080/app/deletePaciente";
     //private apiUrl = "";
 
     constructor(private http: HttpClient) {
@@ -28,8 +29,8 @@ export class PacienteService {
     editPaciente(id: number, paciente: Paciente): Observable<Object> {
         return this.http.put(`${this.url}/${id}`, paciente);
     }
-    deletePaciente(id: number): Observable<Object> {
-        return this.http.delete(`${this.url}/${id}`);
+    deletePaciente(idPaciente: number): Observable<Object> {
+        return this.http.delete(`${this.urlDelete}/${idPaciente}`);
     }
 
     getPacientesPage(page: number, size: number): Observable<any> {

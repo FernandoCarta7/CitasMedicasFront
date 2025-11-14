@@ -20,7 +20,7 @@ export class PacienteListar {
   ngOnInit() {
     this.listadoPacientes();
   }
-
+  
   public listadoPacientes() {
     this.pacienteService.getPacientesPage(this.currentPage, 10).subscribe(data => {
       this.pacientes = data.content;
@@ -39,5 +39,17 @@ export class PacienteListar {
       this.currentPage--;
       this.listadoPacientes();
     }
+  }
+
+  
+
+  deletePaciente( idPaciente : number ) {
+    //console.log(id);
+    this.pacienteService.deletePaciente(idPaciente).subscribe({
+      next: () => this.ngOnInit()
+    })
+  }
+  goToPacientes() {
+    this.route.navigate(['/paciente-listar']);
   }
 }

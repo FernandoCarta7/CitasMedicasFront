@@ -2,12 +2,12 @@
 
     <div class="cards-container">
         @for (cita of citas; track $index) {
-            
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="nombre"> Paciente: {{ cita.paciente.nombres + ' ' + cita.paciente.apellidos }}</h3>
 
-                </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="nombre"> Paciente: {{ cita.paciente.nombres + ' ' + cita.paciente.apellidos }}</h3>
+
+            </div>
             <div class="card-content">
                 <p class="especialidad"><strong>Especialidad: </strong>{{ cita.medico.especialidad }}</p>
                 <p><strong>Fecha:</strong> {{ cita.fecha_cita| date:'medium' }}</p>
@@ -21,8 +21,17 @@
                     <button class="boton-circular boton-rojo"><i class="bi bi-trash3"></i></button>
                 </div>
             </div>
-            
+
         </div>
-    }
+        }
+    </div>
 </div>
+    <button class="boton-reporte boton-azul"><i class="bi bi-box-arrow-down"> </i> XML</button>
+    <br>
+    <button class="boton-reporte boton-verde"><i class="bi bi-file-excel"> </i> EXCEL</button>
+<div class="paginacion">
+    <button (click)="prevPage()" [disabled]="currentPage === 0"><i class="bi bi-chevron-double-left"></i></button>
+    <span>Página {{ currentPage + 1 }} de {{ totalPages }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage >= totalPages - 1"><i
+            class="bi bi-chevron-double-right"></i></button>
 </div>

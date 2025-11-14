@@ -4,7 +4,7 @@ import { Paciente } from "./Paciente";
 export class Cita {
   id_cita: number;
   fecha_cita: Date;
-  id_paciente: number;
+  idPaciente: number;
   paciente?: Paciente;
   id_medico: number;
   medico?: Medico;

@@ -1,11 +1,11 @@
-<nav class="navbar">
+<div>
+    <nav class="navbar">
+        <div class="menu-toggle" (click)="toggleMenu()">☰</div>
+        <div class="nav-links" [class.active]="menuAbierto">
+            <button class="boton boton-fondo" (click)="goToPacientes()"> <i class="bi bi-house"></i></button>
+            <button class="boton boton-fondo" (click)="goToCitas()"> <i class="bi bi-calendar-date-fill"></i></button>
+            <button class="boton boton-fondo" (click)="goToMedicos()"> <i class="bi bi-person-vcard"></i></button>
 
-    <div class="menu-toggle" (click)="toggleMenu()">☰</div>
-
-    <div class="nav-links" [class.active]="menuAbierto">
-        <button class="boton-circular boton-azul" (click)="goToPacientes()"> <i class="bi bi-house"></i> </button>
-        <button class="boton-circular boton-azul" (click)="goToCitas()"> <i class="bi bi-calendar-date-fill"></i> </button>
-        <button class="boton-circular boton-azul" (click)="goToMedicos()"> <i class="bi bi-person-vcard"></i> </button>
-
-    </div>
-</nav>
+        </div>
+    </nav>
+</div>
