@@ -26,9 +26,9 @@
         }
     </div>
 </div>
-    <button class="boton-reporte boton-azul"><i class="bi bi-box-arrow-down"> </i> XML</button>
+    <button class="boton-reporte boton-azul" (click)="descargarReporte()"><i class="bi bi-box-arrow-down"> </i> XML</button>
     <br>
-    <button class="boton-reporte boton-verde"><i class="bi bi-file-excel"> </i> EXCEL</button>
+    <button class="boton-reporte boton-verde"><i class="bi bi-plus-lg"></i> Cita</button>
 <div class="paginacion">
     <button (click)="prevPage()" [disabled]="currentPage === 0"><i class="bi bi-chevron-double-left"></i></button>
     <span>Página {{ currentPage + 1 }} de {{ totalPages }}</span>

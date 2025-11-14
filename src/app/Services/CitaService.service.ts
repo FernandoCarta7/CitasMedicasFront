@@ -10,6 +10,7 @@ import { Observable } from "rxjs";
 export class CitaService {
 
     private url = "http://localhost:8080/app/cita";
+    private urlReporteXML = "http://localhost:8080/app/xml";
     //private apiUrl = "";
 
     constructor(private http: HttpClient) {
@@ -37,5 +38,8 @@ export class CitaService {
             .set('page', page)
             .set('size', size);
         return this.http.get<any>(this.url, { params });
+    }
+    descargarReporte(): Observable<string> {
+        return this.http.get(this.urlReporteXML, { responseType: 'text' });
     }
 }

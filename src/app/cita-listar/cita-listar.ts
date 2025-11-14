@@ -3,6 +3,7 @@ import { Cita } from '../Models/Cita';
 import { CitaService } from '../Services/CitaService.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'cita-listar',
@@ -22,7 +23,7 @@ export class CitaListar {
 
   public listadoCitas() {
     this.citaService.getCitasPage(this.currentPage, 10).subscribe(data => {
-      
+
       this.citas = data.content;
       this.totalPages = data.totalPages;
     });
@@ -40,4 +41,21 @@ export class CitaListar {
       this.listadoCitas();
     }
   }
+
+  descargarReporte() {
+    this.citaService.descargarReporte().subscribe(xml => {
+      const blob = new Blob([xml], { type: 'application/xml' });
+      const url = window.URL.createObjectURL(blob);
+
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'reporte.xml';
+      a.click();
+
+      window.URL.revokeObjectURL(url);
+    });
+  }
+
+  
+
 }

@@ -13,11 +13,13 @@ import { CommonModule } from '@angular/common';
 })
 export class PacienteListar {
   pacientes: Paciente[];
+  iterador: number;
   currentPage = 0;
   totalPages = 0;
-  constructor(private pacienteService: PacienteService, private route: Router) { }
+  constructor(private pacienteService: PacienteService, private route: Router) {}
 
   ngOnInit() {
+    
     this.listadoPacientes();
   }
   
@@ -52,4 +54,6 @@ export class PacienteListar {
   goToPacientes() {
     this.route.navigate(['/paciente-listar']);
   }
+
+ 
 }
