@@ -3,6 +3,8 @@ import { PacienteListar } from './paciente-listar/paciente-listar';
 import { CitaListar } from './cita-listar/cita-listar';
 import { MedicoListar } from './medico-listar/medico-listar';
 import { PacienteCrear } from './paciente-crear/paciente-crear';
+import { CitaCrear } from './cita-crear/cita-crear';
+import { PacienteActualizar } from './paciente-actualizar/paciente-actualizar';
 
 export const routes: Routes = [
     /*
@@ -10,6 +12,7 @@ export const routes: Routes = [
     */
     { path: 'paciente-listar', component: PacienteListar, title: 'Pacientes' },
     { path: 'paciente-crear', component: PacienteCrear, title: 'Pacientes' },
+    { path: 'paciente-actualizar/:id', component: PacienteActualizar, title: 'Pacientes' },
 
     /*
     -----------------------------------------MEDICOS-----------------------------------------
@@ -19,5 +22,7 @@ export const routes: Routes = [
     ------------------------------------------CITAS------------------------------------------
     */
     { path: 'cita-listar', component: CitaListar, title: 'Citas' },
+    { path: 'cita-crear/:idPaciente', component: CitaCrear, title: 'Citas' },
+
     { path: '', redirectTo: 'paciente-listar', pathMatch: 'full' }
 ];

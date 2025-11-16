@@ -43,8 +43,6 @@ export class PacienteListar {
     }
   }
 
-  
-
   deletePaciente( idPaciente : number ) {
     //console.log(id);
     this.pacienteService.deletePaciente(idPaciente).subscribe({
@@ -55,5 +53,12 @@ export class PacienteListar {
     this.route.navigate(['/paciente-listar']);
   }
 
- 
+
+  editarPaciente(idPaciente: number) {
+    this.route.navigate(['/paciente-editar', idPaciente]);
+  }
+
+  citaCrear(idPaciente: number) {
+    this.route.navigate(['/cita-crear', idPaciente]);
+  }
 }

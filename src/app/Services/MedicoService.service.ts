@@ -9,7 +9,9 @@ import { Observable } from "rxjs";
 })
 export class MedicoService {
 
-    private url = "http://localhost:8080/app/medico";
+    private url = "http://localhost:8080/app/medicos";
+    private urlPageable = "http://localhost:8080/app/medico";
+    private urlGetById = "http://localhost:8080/app/getMedicoById";
     //private apiUrl = "";
 
     constructor(private http: HttpClient) {
@@ -37,5 +39,9 @@ export class MedicoService {
             .set('page', page)
             .set('size', size);
         return this.http.get<any>(this.url, { params });
+    }
+
+    getMedicoById(id: number): Observable<Medico> {
+        return this.http.get<Medico>(`${this.urlGetById}/${id}`);
     }
 }

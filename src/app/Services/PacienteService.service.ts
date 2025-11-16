@@ -23,6 +23,18 @@ export class PacienteService {
         let lista = this.http.get<Paciente[]>(this.url);
         return lista;
     }
+
+    getPacientesPage(page: number, size: number): Observable<any> {
+        let params = new HttpParams()
+            .set('page', page)
+            .set('size', size);
+        return this.http.get<any>(this.url, { params });
+    }
+
+    getPacienteById(id: number): Observable<Paciente> {
+        return this.http.get<Paciente>(`${this.url}/${id}`);
+    }
+
     addPaciente(paciente: Paciente): Observable<Object> {
         return this.http.post(this.url, paciente);
     }
@@ -33,10 +45,5 @@ export class PacienteService {
         return this.http.delete(`${this.urlDelete}/${idPaciente}`);
     }
 
-    getPacientesPage(page: number, size: number): Observable<any> {
-        let params = new HttpParams()
-            .set('page', page)
-            .set('size', size);
-        return this.http.get<any>(this.url, { params });
-    }
+
 }

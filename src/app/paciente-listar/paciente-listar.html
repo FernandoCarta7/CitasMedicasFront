@@ -2,9 +2,10 @@
     <table class="tabla-responsive">
         <thead>
             <tr>
-                <th></th>
+                <th>Asignar cita</th>
                 <th>Nombre</th>
                 <th>Apellido</th>
+                <th>Fecha nacimiento</th>
                 <th>Editar</th>
                 <th>Eliminar</th>
             </tr>
@@ -12,12 +13,13 @@
         <tbody>
             @for (item of pacientes; track item.idPaciente) {
             <tr>
-                <td></td>
+                <td> <button (click)="citaCrear(item.idPaciente)" class="boton-circular boton-azul"><i class="bi bi-clipboard2-plus-fill"></i></button></td>
                 <td>{{ item.nombres }}</td>
                 <td>{{ item.apellidos }}</td>
+                <td> {{ item.fechaNacimiento }} </td>
                 <td>
-                    <button class="boton-success boton-circular">
-                        <i class="bi bi-pencil"></i>
+                    <button (click)="editarPaciente(item.idPaciente)" class="boton-success boton-circular">
+                        <i class="bi bi-pencil"></i> 
                     </button>
                 </td>
                 <td>

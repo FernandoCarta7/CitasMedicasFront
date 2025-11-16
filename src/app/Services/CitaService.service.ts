@@ -11,6 +11,7 @@ export class CitaService {
 
     private url = "http://localhost:8080/app/cita";
     private urlReporteXML = "http://localhost:8080/app/xml";
+    private urlSave = "http://localhost:8080/app/cita/save";
     //private apiUrl = "";
 
     constructor(private http: HttpClient) {
@@ -24,7 +25,7 @@ export class CitaService {
         return lista;
     }
     addCita(cita: Cita): Observable<Object> {
-        return this.http.post(this.url, cita);
+        return this.http.post(this.urlSave, cita);
     }
     editCita(id: number, cita: Cita): Observable<Object> {
         return this.http.put(`${this.url}/${id}`, cita);
