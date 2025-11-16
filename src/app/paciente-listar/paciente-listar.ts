@@ -55,7 +55,7 @@ export class PacienteListar {
 
 
   editarPaciente(idPaciente: number) {
-    this.route.navigate(['/paciente-editar', idPaciente]);
+    this.route.navigate(['/paciente-actualizar', idPaciente]);
   }
 
   citaCrear(idPaciente: number) {

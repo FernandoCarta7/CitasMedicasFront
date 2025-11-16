@@ -10,6 +10,7 @@ import { Observable } from "rxjs";
 export class PacienteService {
 
     private url = "http://localhost:8080/app/paciente";
+    private urlActualizar = "http://localhost:8080/app/editarPaciente";
     private urlDelete = "http://localhost:8080/app/deletePaciente";
     //private apiUrl = "";
 
@@ -31,15 +32,15 @@ export class PacienteService {
         return this.http.get<any>(this.url, { params });
     }
 
-    getPacienteById(id: number): Observable<Paciente> {
-        return this.http.get<Paciente>(`${this.url}/${id}`);
+    getPacienteById(idPaciente: number): Observable<Paciente> {
+        return this.http.get<Paciente>(`${this.url}/${idPaciente}`);
     }
 
     addPaciente(paciente: Paciente): Observable<Object> {
         return this.http.post(this.url, paciente);
     }
     editPaciente(id: number, paciente: Paciente): Observable<Object> {
-        return this.http.put(`${this.url}/${id}`, paciente);
+        return this.http.put(`${this.urlActualizar}/${id}`, paciente);
     }
     deletePaciente(idPaciente: number): Observable<Object> {
         return this.http.delete(`${this.urlDelete}/${idPaciente}`);
