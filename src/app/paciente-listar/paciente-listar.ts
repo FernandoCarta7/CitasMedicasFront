@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Paciente } from '../Models/Paciente';
 import { PacienteService } from '../Services/PacienteService.service';
 import { Router } from '@angular/router';
-import { response } from 'express';
 import { CommonModule } from '@angular/common';
 
 @Component({

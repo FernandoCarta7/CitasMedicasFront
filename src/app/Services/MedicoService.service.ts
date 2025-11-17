@@ -12,6 +12,7 @@ export class MedicoService {
     private url = "http://localhost:8080/app/medicos";
     private urlPageable = "http://localhost:8080/app/medico";
     private urlGetById = "http://localhost:8080/app/getMedicoById";
+    private urlDelete = "http://localhost:8080/app/deleteMedico";
     //private apiUrl = "";
 
     constructor(private http: HttpClient) {
@@ -31,14 +32,14 @@ export class MedicoService {
         return this.http.put(`${this.url}/${id}`, medico);
     }
     deleteMedico(id: number): Observable<Object> {
-        return this.http.delete(`${this.url}/${id}`);
+        return this.http.delete(`${this.urlDelete}/${id}`);
     }
 
     getMedicosPage(page: number, size: number): Observable<any> {
         let params = new HttpParams()
             .set('page', page)
             .set('size', size);
-        return this.http.get<any>(this.url, { params });
+        return this.http.get<any>(this.urlPageable, { params });
     }
 
     getMedicoById(id: number): Observable<Medico> {
