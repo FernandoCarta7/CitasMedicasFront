@@ -12,6 +12,8 @@ export class CitaService {
     private url = "http://localhost:8080/app/cita";
     private urlReporteXML = "http://localhost:8080/app/xml";
     private urlSave = "http://localhost:8080/app/cita/save";
+    private urlUpdate = "http://localhost:8080/app/updateCita";
+    private urlDelete = "http://localhost:8080/app/deleteCita";
     //private apiUrl = "";
 
     constructor(private http: HttpClient) {
@@ -27,11 +29,11 @@ export class CitaService {
     addCita(cita: Cita): Observable<Object> {
         return this.http.post(this.urlSave, cita);
     }
-    editCita(id: number, cita: Cita): Observable<Object> {
-        return this.http.put(`${this.url}/${id}`, cita);
+    editCita(idCita: number, cita: Cita): Observable<Object> {
+        return this.http.put(`${this.urlUpdate}/${idCita}`, cita);
     }
     deleteCita(id: number): Observable<Object> {
-        return this.http.delete(`${this.url}/${id}`);
+        return this.http.delete(`${this.urlDelete}/${id}`);
     }
 
     getCitasPage(page: number, size: number): Observable<any> {
@@ -43,4 +45,9 @@ export class CitaService {
     descargarReporte(): Observable<string> {
         return this.http.get(this.urlReporteXML, { responseType: 'text' });
     }
+
+    getCitaById(idCita: number): Observable<Cita> {
+        return this.http.get<Cita>(`${this.url}/${idCita}`);
+    }
+
 }

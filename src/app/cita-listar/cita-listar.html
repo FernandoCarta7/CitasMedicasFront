@@ -1,5 +1,5 @@
-<div class="center-content">
 
+<div class="center-content">
     <div class="cards-container">
         @for (cita of citas; track $index) {
 
@@ -15,10 +15,10 @@
             </div>
             <div class="card-footer">
                 <div>
-                    <button class="boton-circular boton-verde"><i class="bi bi-pencil"></i></button>
+                    <button (click)="editarCita(cita.idCita)" class="boton-circular boton-verde"><i class="bi bi-pencil"></i></button>
                 </div>
                 <div>
-                    <button class="boton-circular boton-rojo"><i class="bi bi-trash3"></i></button>
+                    <button (click)="deleteCita(cita.idCita)" class="boton-circular boton-rojo"><i class="bi bi-trash3"></i></button>
                 </div>
             </div>
 

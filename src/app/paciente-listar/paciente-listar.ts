@@ -60,4 +60,7 @@ export class PacienteListar {
   citaCrear(idPaciente: number) {
     this.route.navigate(['/cita-crear', idPaciente]);
   }
+  goToCrearPaciente() {
+    this.route.navigate(['/paciente-crear']);
+  }
 }

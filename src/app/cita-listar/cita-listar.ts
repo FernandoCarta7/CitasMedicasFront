@@ -56,6 +56,15 @@ export class CitaListar {
     });
   }
 
-  
+  editarCita(idCita: number) {
+    this.route.navigate(['/cita-actualizar', idCita]);
+  }
+
+  deleteCita(idCita: number) {
+    //console.log(id);
+    this.citaService.deleteCita(idCita).subscribe({
+      next: () => this.ngOnInit()
+    })
+  }
 
 }

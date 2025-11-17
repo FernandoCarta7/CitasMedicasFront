@@ -53,4 +53,10 @@ export class MedicoListar {
       next: () => this.ngOnInit()
     })
   }
+  goToCrearMedico() {
+    this.route.navigate(['/medico-crear']);
+  }
+   editarMedico(idMedico: number) {
+    this.route.navigate(['/medico-actualizar', idMedico]);
+  }
 }

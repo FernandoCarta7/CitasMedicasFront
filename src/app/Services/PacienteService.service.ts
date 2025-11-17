@@ -12,6 +12,7 @@ export class PacienteService {
     private url = "http://localhost:8080/app/paciente";
     private urlActualizar = "http://localhost:8080/app/editarPaciente";
     private urlDelete = "http://localhost:8080/app/deletePaciente";
+    private urlAdd = "http://localhost:8080/app/savePaciente";
     //private apiUrl = "";
 
     constructor(private http: HttpClient) {
@@ -37,7 +38,7 @@ export class PacienteService {
     }
 
     addPaciente(paciente: Paciente): Observable<Object> {
-        return this.http.post(this.url, paciente);
+        return this.http.post(this.urlAdd, paciente);
     }
     editPaciente(id: number, paciente: Paciente): Observable<Object> {
         return this.http.put(`${this.urlActualizar}/${id}`, paciente);

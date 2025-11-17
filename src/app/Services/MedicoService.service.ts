@@ -13,6 +13,7 @@ export class MedicoService {
     private urlPageable = "http://localhost:8080/app/medico";
     private urlGetById = "http://localhost:8080/app/getMedicoById";
     private urlDelete = "http://localhost:8080/app/deleteMedico";
+    private urlAdd = "http://localhost:8080/app/saveMedico";
     //private apiUrl = "";
 
     constructor(private http: HttpClient) {
@@ -26,7 +27,7 @@ export class MedicoService {
         return lista;
     }
     addMedico(medico: Medico): Observable<Object> {
-        return this.http.post(this.url, medico);
+        return this.http.post(this.urlAdd, medico);
     }
     editMedico(id: number, medico: Medico): Observable<Object> {
         return this.http.put(`${this.url}/${id}`, medico);
