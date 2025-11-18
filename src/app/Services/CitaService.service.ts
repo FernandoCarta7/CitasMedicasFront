@@ -8,12 +8,12 @@ import { Observable } from "rxjs";
     providedIn: 'root'
 })
 export class CitaService {
-
-    private url = "http://localhost:8080/app/cita";
-    private urlReporteXML = "http://localhost:8080/app/xml";
-    private urlSave = "http://localhost:8080/app/cita/save";
-    private urlUpdate = "http://localhost:8080/app/updateCita";
-    private urlDelete = "http://localhost:8080/app/deleteCita";
+    private HOST = "http://192.168.1.3:8080";
+    private url = this.HOST + "/app/cita";
+    private urlReporteXML = this.HOST + "/app/xml";
+    private urlSave = this.HOST + "/app/cita/save";
+    private urlUpdate = this.HOST + "/app/updateCita";
+    private urlDelete = this.HOST + "/app/deleteCita";
     //private apiUrl = "";
 
     constructor(private http: HttpClient) {

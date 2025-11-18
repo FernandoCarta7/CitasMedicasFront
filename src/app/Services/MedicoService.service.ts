@@ -8,12 +8,12 @@ import { Observable } from "rxjs";
     providedIn: 'root'
 })
 export class MedicoService {
-
-    private url = "http://localhost:8080/app/medicos";
-    private urlPageable = "http://localhost:8080/app/medico";
-    private urlGetById = "http://localhost:8080/app/getMedicoById";
-    private urlDelete = "http://localhost:8080/app/deleteMedico";
-    private urlAdd = "http://localhost:8080/app/saveMedico";
+    private HOST = "http://192.168.1.3:8080";
+    private url = this.HOST + "/app/medicos";
+    private urlPageable = this.HOST + "/app/medico";
+    private urlGetById = this.HOST + "/app/getMedicoById";
+    private urlDelete = this.HOST + "/app/deleteMedico";
+    private urlAdd = this.HOST + "/app/saveMedico";
     //private apiUrl = "";
 
     constructor(private http: HttpClient) {

@@ -8,11 +8,11 @@ import { Observable } from "rxjs";
     providedIn: 'root'
 })
 export class PacienteService {
-
-    private url = "http://localhost:8080/app/paciente";
-    private urlActualizar = "http://localhost:8080/app/editarPaciente";
-    private urlDelete = "http://localhost:8080/app/deletePaciente";
-    private urlAdd = "http://localhost:8080/app/savePaciente";
+    private HOST = "http://192.168.1.3:8080"; //CAMBIAR DIRECCION IP
+    private url = this.HOST + "/app/paciente";
+    private urlActualizar = this.HOST + "/app/editarPaciente";
+    private urlDelete = this.HOST + "/app/deletePaciente";
+    private urlAdd = this.HOST + "/app/savePaciente";
     //private apiUrl = "";
 
     constructor(private http: HttpClient) {
